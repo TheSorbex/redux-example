@@ -9,8 +9,14 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ openModal }, dispatch)
 }
 
+const mapStateToProps = (state) => {
+  return {
+    people: state.people.people.res
+  }
+}
+
 const MainPageContainer = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(MainPage)
 
